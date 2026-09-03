@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.card-shadow {
+    box-shadow: 0 10px 25px -5px rgba(2, 86, 155, 0.1), 0 8px 10px -6px rgba(2, 86, 155, 0.1);
+}
+
+.input-focus:focus {
+    box-shadow: 0 0 0 3px rgba(2, 117, 194, 0.2);
+}
+
+.success-checkmark {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #10b981;
+    position: relative;
+    animation: scaleIn 0.3s ease-in-out;
+}
+
+.success-checkmark::after {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 30px;
+    width: 25px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 0 3px 3px;
+    transform: rotate(-45deg);
+}
+
+.failure-mark {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #e53e3e;
+    position: relative;
+    animation: scaleIn 0.3s ease-in-out;
+}
+
+.failure-mark::before, .failure-mark::after {
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 4px;
+    background-color: white;
+    top: 20px;
+    left: 38px;
+}
+
+.failure-mark::before {
+    transform: rotate(45deg);
+}
+
+.failure-mark::after {
+    transform: rotate(-45deg);
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.password-toggle {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.password-toggle:hover {
+    color: #02569B;
+}
+
+.validation-error {
+    color: #e53e3e;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.validation-success {
+    color: #38a169;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.progress-bar {
+    transition: width 0.5s ease-in-out;
+}
+
+.flutter-blue {
+    background-color: #02569B;
+}
+
+.text-flutter-blue {
+    color: #02569B;
+}
+
+.hover\:text-flutter-dark-blue:hover {
+    color: #013747;
+}
+
+.bg-flutter-blue {
+    background-color: #02569B;
+}
+
+.bg-flutter-light-blue {
+    background-color: #0175C2;
+}
+
+.bg-flutter-dark-blue {
+    background-color: #013747;
+}
+
+.text-flutter-dark-blue {
+    color: #013747;
+}
+
+.focus\:ring-flutter-light-blue:focus {
+    --tw-ring-color: rgba(1, 117, 194, 0.5);
+    box-shadow: 0 0 0 3px rgba(1, 117, 194, 0.1);
+}

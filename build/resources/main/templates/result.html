@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password | Tracker App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script th:src="@{/js/main.js}" defer></script>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body class="py-8 px-4">
+<div class="max-w-md w-full bg-white rounded-xl card-shadow overflow-hidden transition-all duration-300">
+    <!-- Progress Bar -->
+    <div class="h-1.5 w-full bg-gray-200">
+        <div class="h-full w-full bg-flutter-light-blue w-2/3 transition-all duration-500"></div>
+    </div>
+
+    <!-- Form Content -->
+    <div th:if='${message != null and #strings.contains(message, "Successfully")}' class="p-8">
+        <!-- Success Message (Initially Hidden) -->
+        <div id="successMessage" class="text-center py-8">
+            <div class="success-checkmark mx-auto mb-6"></div>
+            <h3 class="text-xl font-semibold text-gray-800">Password Updated</h3>
+            <p th:text="${message}" class="mt-2 text-gray-600"></p>
+        </div>
+    </div>
+
+    <div th:if='${message != null and !#strings.contains(message, "Successfully")}' class="p-8">
+        <div id="failureMessage" class="text-center py-8">
+            <div class="failure-mark mx-auto mb-6 text-red-600"></div>
+            <h3 class="text-xl font-semibold text-gray-600">Password Reset Failed</h3>
+            <p th:text="${message}" class="mt-2 text-gray-600"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gray-50 p-5 border-t border-gray-200 text-center">
+        <p class="text-xs text-gray-500">
+            © 2025 Tracker App. All rights reserved.
+            <a href="#" class="text-flutter-blue hover:text-flutter-dark-blue ml-2">Privacy Policy</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
